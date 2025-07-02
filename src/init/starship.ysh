@@ -1,0 +1,5 @@
+func renderPrompt(io) {
+	var c = ^(STARSHIP_SHELL=ysh starship prompt)
+	var x = io.captureStdout(c)
+	return (x)
+}

@@ -364,6 +364,16 @@ eval "$(starship init osh)"
 
 </details>
 
+<summary>oils-for-unix (YSH)</summary>
+
+Add the following to the end of your YSH configuration (`~/.config/oils/yshrc`)
+
+```sh
+eval "$(starship init ysh)"
+```
+
+</details>
+
 <details>
 <summary>PowerShell</summary>
 

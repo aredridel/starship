@@ -26,6 +26,7 @@ pub fn module<'a>(context: &'a Context) -> Option<Module<'a>> {
                     Shell::Elvish => Some(config.elvish_indicator),
                     Shell::Tcsh => Some(config.tcsh_indicator),
                     Shell::Osh => Some(config.osh_indicator),
+                    Shell::Ysh => Some(config.ysh_indicator),
                     Shell::Nu => Some(config.nu_indicator),
                     Shell::Xonsh => Some(config.xonsh_indicator),
                     Shell::Cmd => Some(config.cmd_indicator),

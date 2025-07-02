@@ -183,6 +183,10 @@ pub fn init_stub(shell_name: &str) -> io::Result<()> {
             r#"eval "$({} init osh --print-full-init)""#,
             starship.sprint_posix()?
         ),
+        "ysh" => print!(
+            r#"eval "$({} init ysh --print-full-init)""#,
+            starship.sprint_posix()?
+        ),
         "cmd" => print_script(CMDEXE_INIT, &StarshipPath::init()?.sprint_cmdexe()?),
         _ => {
             eprintln!(
@@ -193,6 +197,7 @@ pub fn init_stub(shell_name: &str) -> io::Result<()> {
                  * fish\n\
                  * ion\n\
                  * osh\n\
+                 * ysh\n\
                  * powershell\n\
                  * tcsh\n\
                  * zsh\n\
@@ -223,6 +228,7 @@ pub fn init_main(shell_name: &str) -> io::Result<()> {
         "elvish" => print_script(ELVISH_INIT, &starship_path.sprint()?),
         "tcsh" => print_script(TCSH_INIT, &starship_path.sprint_posix()?),
         "osh" => print_script(OSH_INIT, &starship_path.sprint_posix()?),
+        "ysh" => print_script(YSH_INIT, &starship_path.sprint_posix()?),
         "xonsh" => print_script(XONSH_INIT, &starship_path.sprint_posix()?),
         _ => {
             println!(
@@ -270,6 +276,8 @@ const ELVISH_INIT: &str = include_str!("starship.elv");
 const TCSH_INIT: &str = include_str!("starship.tcsh");
 
 const OSH_INIT: &str = include_str!("starship.osh");
+
+const YSH_INIT: &str = include_str!("starship.ysh");
 
 const NU_INIT: &str = include_str!("starship.nu");
 
